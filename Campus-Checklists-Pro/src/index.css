@@ -1,68 +1,108 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Global reset-ish */
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Main container */
+.app {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
-button {
+/* Headings */
+h1, h2, h3 {
+  margin: 0.5em 0;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* List cards */
+.card {
+  background: #ecf0f1;
+  padding: 12px;
+  margin: 10px 0;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background 0.2s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.card:hover {
+  background: #dfe6e9;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Forms */
+form {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+input:focus {
+  outline: 2px solid #3498db;
+}
+
+/* Buttons */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+/* Filter buttons */
+div button {
+  margin: 5px;
+}
+div button[style*="font-weight: bold"] {
+  background: #2ecc71;
+}
+
+/* Task items */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 6px 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+li button {
+  background: #e74c3c;
+}
+li button:hover {
+  background: #c0392b;
 }
